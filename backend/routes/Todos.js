@@ -10,12 +10,7 @@ router.get('/', async (req, res) => {
 
 // Create new Todo
 router.post('/new', async (req, res) => {
-    const newTodo = new Todo(
-        {
-            author: "Flanders",
-            todo: "Go to canada"
-        }
-    );
+    const newTodo = new Todo(req.body);
     const savedTodo = await newTodo.save();
     res.json(savedTodo)
 })
@@ -32,13 +27,11 @@ router.delete('/delete/:id', async (req, res) => {
     res.json(deletedTodo)
 })
 
-// Delete a Todo by Id
+// Update a Todo by Id
 router.put('/update/:id', async (req, res) => {
     const updatedTodo = await Todo.updateOne(
-        {
-            author: "Bart",
-            todo: "Skating"
-        }
+        { _id: req.params.id }, 
+        { $set: req.body }
     );
     res.json(updatedTodo)
 })
