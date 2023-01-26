@@ -9,6 +9,8 @@
     "build": "vite build"
   },
   "dependencies": {
+    "@clerk/clerk-js": "^4.23.3",
+    "@clerk/clerk-react": "^4.8.4",
     "@vitejs/plugin-vue": "^4.0.0",
     "core-js": "^3.8.3",
     "vue": "^3.2.13",
@@ -23,6 +25,7 @@
     "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "autoprefixer": "^10.4.13",
+    "dotenv-webpack": "^8.0.1",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
     "postcss": "^8.4.21",
